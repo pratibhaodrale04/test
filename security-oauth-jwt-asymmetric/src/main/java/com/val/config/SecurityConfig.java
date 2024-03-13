@@ -1,5 +1,7 @@
 package com.val.config;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,19 +10,16 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import com.val.config.user.UserInfoManagerConfig;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@AllArgsConstructor
-@RequiredArgsConstructor
 public class SecurityConfig {
 	
 	@Autowired
@@ -39,6 +38,7 @@ public class SecurityConfig {
 	}
 	
 	@Order(value = 2)
+	@Bean
 	public SecurityFilterChain h2ConsoleSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		return httpSecurity
 				.securityMatcher(new AntPathRequestMatcher("/h2-console/**"))
@@ -49,4 +49,8 @@ public class SecurityConfig {
 				.build();
 	}
 	
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }

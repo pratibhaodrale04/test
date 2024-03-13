@@ -1,7 +1,9 @@
 spring:
   application:
     name: security-oauth-jwt-asymmetric
-    
+  h2:
+    console:
+      enabled: true  
   jpa:
     hibernate:
       ddl-auto: create-drop

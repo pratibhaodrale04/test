@@ -1,4 +1,4 @@
-package com.val.config;
+package com.val.config.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

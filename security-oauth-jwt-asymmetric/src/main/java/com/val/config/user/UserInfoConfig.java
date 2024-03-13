@@ -1,4 +1,4 @@
-package com.val.config;
+package com.val.config.user;
 
 import java.util.Arrays;
 import java.util.Collection;

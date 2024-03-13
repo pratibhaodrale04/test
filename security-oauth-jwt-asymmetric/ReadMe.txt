@@ -6,4 +6,7 @@
    used to retrieve user related data, using loadByUsername, and returns UserDetails object.
 5. Create SecurityConfig file in config packageLets modify security settings, 
    to let it access the API using our User.
-6. 
+6. Create IntializeUserInfo class to write user data into h2 DB using CommandLineRunner
+   and as we need to encrypt password, lets create @Bean PasswordEncoder-->BCryptPasswordEncoder 
+   into SecurityConfig class
+7.    
