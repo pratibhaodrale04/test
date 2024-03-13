@@ -12,3 +12,7 @@
 7. Created DashBoardController to access endponts and check authentication
    authentication--->process of checking if user is who they claim to be
    Principal--->is the user who verified
+8. Added @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER','ROLE_USER')") to verify
+   authentication with assigned Roles
+9.     
+   
