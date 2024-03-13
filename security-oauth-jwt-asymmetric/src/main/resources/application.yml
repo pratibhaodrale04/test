@@ -16,4 +16,8 @@ spring:
     driver-class-name: org.h2.Driver    
 logging:
   level:
-    '[org.springframework.security]': trace    
+    '[org.springframework.security]': trace
+    
+jwt:
+  rsa-public-key: classpath:certs/testpublicKey.pem
+  rsa-private-key: classpath:certs/testprivateKey.pem
