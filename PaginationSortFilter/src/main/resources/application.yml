@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: root1234
-    url: jdbc:mysql://localhost:3306/microservice?createDatabaseIfNotExist=true&useSSL=false&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/pagination?createDatabaseIfNotExist=true&useSSL=false&autoReconnect=true
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

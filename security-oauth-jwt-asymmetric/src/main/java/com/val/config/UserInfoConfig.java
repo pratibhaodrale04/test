@@ -9,11 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.val.entity.UserInfo;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
-@Data
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class UserInfoConfig implements UserDetails{
 
 	/**
