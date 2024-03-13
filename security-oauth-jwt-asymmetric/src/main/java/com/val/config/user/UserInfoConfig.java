@@ -39,7 +39,7 @@ public class UserInfoConfig implements UserDetails{
 
 	@Override
 	public String getUsername() {
-		return userInfo.getEmail();
+		return userInfo.getUsername();
 	}
 
 	@Override

@@ -9,4 +9,6 @@
 6. Create IntializeUserInfo class to write user data into h2 DB using CommandLineRunner
    and as we need to encrypt password, lets create @Bean PasswordEncoder-->BCryptPasswordEncoder 
    into SecurityConfig class
-7.    
+7. Created DashBoardController to access endponts and check authentication
+   authentication--->process of checking if user is who they claim to be
+   Principal--->is the user who verified

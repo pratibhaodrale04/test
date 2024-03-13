@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.val.repo.IUserInfoRepo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class UserInfoManagerConfig implements UserDetailsService {
 
 	@Autowired
@@ -16,8 +19,9 @@ public class UserInfoManagerConfig implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return userInfoRepo.findByEmail(username).map(UserInfoConfig::new)
-				.orElseThrow(() -> new UsernameNotFoundException("User Email-->" + username + "does not exist"));
+		log.info("Loading user from DB");
+		return userInfoRepo.findByUsername(username).map(UserInfoConfig::new)
+				.orElseThrow(() -> new UsernameNotFoundException("User Name-->" + username + "does not exist"));
 	}
 
 }

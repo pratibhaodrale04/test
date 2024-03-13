@@ -8,6 +8,5 @@ import com.val.entity.UserInfo;
 
 public interface IUserInfoRepo extends JpaRepository<UserInfo, Long>{
 
-	Optional<UserInfo> findByEmail(String username);
-
+	Optional<UserInfo> findByUsername(String username);
 }
