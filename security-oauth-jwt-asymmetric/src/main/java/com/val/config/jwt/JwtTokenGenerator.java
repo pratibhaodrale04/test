@@ -1,4 +1,4 @@
-package com.val.config.jwtConfig;
+package com.val.config.jwt;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

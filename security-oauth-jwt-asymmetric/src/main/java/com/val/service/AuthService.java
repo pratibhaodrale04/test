@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.val.config.jwtConfig.JwtTokenGenerator;
+import com.val.config.jwt.JwtTokenGenerator;
 import com.val.dto.AuthResponseDTO;
 import com.val.dto.TokenType;
 import com.val.repo.IUserInfoRepo;
