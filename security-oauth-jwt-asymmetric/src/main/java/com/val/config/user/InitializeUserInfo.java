@@ -34,7 +34,7 @@ public class InitializeUserInfo implements CommandLineRunner{
 				.build(),
 				UserInfo.builder()
 				.username("Manager")
-				.email("manager.com")
+				.email("manager@gmail.com")
 				.roles("ROLE_MANAGER")
 				.password(passwordEncoder.encode("manager"))
 				.build(),

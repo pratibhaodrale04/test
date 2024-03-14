@@ -21,3 +21,11 @@ logging:
 jwt:
   rsa-public-key: classpath:certs/testpublicKey.pem
   rsa-private-key: classpath:certs/testprivateKey.pem
+  
+access:
+  token:
+    expiry: 15*60
+    issuer: applicationname  
+  
+  
+#signin--u/p--server gives you token

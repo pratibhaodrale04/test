@@ -13,22 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class DashBoardController {
 
 	@GetMapping("/adminData")
-	@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER','ROLE_USER')")
-//	@PreAuthorize("hasAuthority('SCOPR_READ, SCOPE_WRITE')")
+//	@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER','ROLE_USER')")
+	@PreAuthorize("hasAuthority('SCOPE_WRITE')")
 	public ResponseEntity<String> getAdminData(Principal principal) {
 		return ResponseEntity.ok("Admin data::" + principal.getName());
 	}
 
 	@GetMapping("/managerData")
-	@PreAuthorize("hasAnyRole('ROLE_MANAGER','ROLE_USER')")
-//	@PreAuthorize("hasAuthority('SCOPR_READ, SCOPE_WRITE')")
+//	@PreAuthorize("hasAnyRole('ROLE_MANAGER','ROLE_USER')")
+	@PreAuthorize("hasAuthority('SCOPE_READ')")
 	public ResponseEntity<String> getManagerData(Principal principal) {
 		return ResponseEntity.ok("Manager data::" + principal.getName());
 	}
 
 	@GetMapping("/userData")
-	@PreAuthorize("hasAnyRole('ROLE_USER')")
-//	@PreAuthorize("hasAuthority('SCOPR_READ')")
+//	@PreAuthorize("hasAnyRole('ROLE_USER')")
+	@PreAuthorize("hasAuthority('SCOPE_READ')")
 	public ResponseEntity<String> getUserData(Principal principal) {
 		return ResponseEntity.ok("User data::" + principal.getName());
 	}
